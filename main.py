@@ -7,14 +7,18 @@ base_spring_length = 0.5
 constant = 0.2
 problem = 0
 
-buoyancy = fluid_density * gravity * object_volume
-fg = object_mass * gravity
-submerged_object_volume = fg / (fluid_density * gravity)
-floatation_result = submerged_object_volume / (object_volume ** 2)
+def solution1():
+    
+    buoyancy = fluid_density * gravity * object_volume
+    fg = object_mass * gravity
+    submerged_object_volume = fg / (fluid_density * gravity)
+    floatation_result = submerged_object_volume / (object_volume ** 2)
 
-stretch_force = object_mass * gravity
-extension = stretch_force / constant
-springs_result = extension + base_spring_length
+def solution2():    
+
+    stretch_force = object_mass * gravity
+    extension = stretch_force / constant
+    springs_result = extension + base_spring_length
 
 def menu():
 
@@ -45,41 +49,31 @@ def problem1():
     if (option[0] == "set" and option[1] == "mass"):
 
         object_mass = option[2]
-        fg = float(object_mass) * int(gravity)
-        submerged_object_volume = fg / (int(fluid_density) * int(gravity))
-        floatation_result = submerged_object_volume / (int(object_volume) ** 2)
+        solution1()
         problem1()
 
     elif (option[0] == "set" and option[1] == "density"):
 
         object_density = option[2]
-        fg = float(object_mass) * int(gravity)
-        submerged_object_volume = fg / (int(fluid_density) * int(gravity))
-        floatation_result = submerged_object_volume / (int(object_volume) ** 2)
+        solution1()
         problem1()
 
     elif (option[0] == "set" and option[1] == "volume"):
 
         object_volume = option[2]
-        fg = float(object_mass) * int(gravity)
-        submerged_object_volume = fg / (int(fluid_density) * int(gravity))
-        floatation_result = submerged_object_volume / (int(object_volume) ** 2)
+        solution1()
         problem1()
 
     elif (option[0] == "set" and option[1] == "fluid" and option[2] == "density"):
 
         fluid_density = option[3]
-        fg = float(object_mass) * int(gravity)
-        submerged_object_volume = fg / (int(fluid_density) * int(gravity))
-        floatation_result = submerged_object_volume / (int(object_volume) ** 2)
+        solution1()
         problem1()
 
     elif (option[0] == "set" and option[1] == "gravity"):
 
         gravity = option[2]
-        fg = float(object_mass) * int(gravity)
-        submerged_object_volume = fg / (int(fluid_density) * int(gravity))
-        floatation_result = submerged_object_volume / (int(object_volume) ** 2)
+        solution1()
         problem1()
 
     elif (option[0] == "exit"):
@@ -108,33 +102,25 @@ def problem2():
     if (option[0] == "set" and option[1] == "mass"):
 
         object_mass = option[2]
-        stretch_force = float(object_mass) * float(gravity)
-        extension = stretch_force / float(constant)
-        springs_result = extension + int(base_spring_length)
+        solution2()
         problem2()
 
     elif (option[0] == "set" and option[1] == "gravity"):
 
         gravity = option[2]
-        stretch_force = float(object_mass) * float(gravity)
-        extension = stretch_force / float(constant)
-        springs_result = extension + int(base_spring_length)
+        solution2()
         problem2()
 
     elif (option[0] == "set" and option[1] == "length"):
 
         base_spring_length = option[2]
-        stretch_force = float(object_mass) * float(gravity)
-        extension = stretch_force / float(constant)
-        springs_result = extension + int(base_spring_length)
+        solution2()
         problem2()
 
     elif (option[0] == "set" and option[1] == "constant"):
 
         constant = option[2]
-        stretch_force = float(object_mass) * float(gravity)
-        extension = stretch_force / float(constant)
-        springs_result = extension + int(base_spring_length)
+        solution2()
         problem2()
 
     elif (option[0] == "exit"):

@@ -9,6 +9,15 @@ problem = 0
 
 def solution1():
     
+    global object_mass
+    global object_density
+    global object_volume
+    global fluid_density
+    global gravity
+    global floatation_result
+    global fg
+    global submerged_object_volume
+    
     buoyancy = fluid_density * gravity * object_volume
     fg = object_mass * gravity
     submerged_object_volume = fg / (fluid_density * gravity)
@@ -16,6 +25,12 @@ def solution1():
 
 def solution2():    
 
+    global object_mass
+    global gravity
+    global base_spring_length
+    global constant
+    global springs_result
+    
     stretch_force = object_mass * gravity
     extension = stretch_force / constant
     springs_result = extension + base_spring_length
